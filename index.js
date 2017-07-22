@@ -15,6 +15,6 @@ export default class Emitter {
     }
 
     emit(name, ...args) {
-        this.events.has(name) && this.events.get(name).forEach(fn => fn(...args))
+        return this.events.has(name) && this.events.get(name).map(fn => fn(...args))
     }
 }
